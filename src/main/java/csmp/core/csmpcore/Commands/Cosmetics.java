@@ -22,7 +22,7 @@ public class Cosmetics implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             Inventory inv = Bukkit.createInventory(player, 9 * 6, invName);
-            inv.setItem(11, ItemManagerStarlightScimitar.StarScim);
+            inv.setItem(11, ItemManagerStarlightScimitar.starScim);
             player.openInventory(inv);
 
         } else {

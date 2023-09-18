@@ -21,7 +21,7 @@ public class ItemManagerPlasmaCore {
     }
 
     private static void createPlasmaCore() {
-        ItemStack plasmaCore = new ItemStack(Material.MAGMA_BLOCK, 1);
+        plasmaCore = new ItemStack(Material.MAGMA_BLOCK, 1);
         ItemMeta meta = plasmaCore.getItemMeta();
         meta.setDisplayName("plasmacoretest"); //display name
         List<String> lore = new ArrayList<>();
@@ -33,7 +33,6 @@ public class ItemManagerPlasmaCore {
         }
         meta.setLore(lore);
         plasmaCore.setItemMeta(meta);
-        plasmaCore = plasmaCore;
         ShapedRecipe pcRecipe = new ShapedRecipe(NamespacedKey.minecraft("plasmacore"), plasmaCore);
         pcRecipe.shape(new String[]{"ODO", "CLC", "OCO"});
         pcRecipe.setIngredient('O', Material.OBSIDIAN);

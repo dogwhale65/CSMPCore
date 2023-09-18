@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemManagerStarlightScimitar {
-    public static ItemStack StarScim;
+    public static ItemStack starScim;
 
     public ItemManagerStarlightScimitar() {
     }
@@ -22,7 +22,7 @@ public class ItemManagerStarlightScimitar {
     }
 
     private static void createStarScim() {
-        ItemStack starScim = new ItemStack(Material.DIAMOND_SWORD, 1);
+        starScim = new ItemStack(Material.DIAMOND_SWORD, 1);
         ItemMeta meta = starScim.getItemMeta();
         meta.setUnbreakable(true);
         meta.setDisplayName("§dStarlight Scimitar"); //display name
@@ -35,12 +35,11 @@ public class ItemManagerStarlightScimitar {
         }
         meta.setLore(lore);
         starScim.setItemMeta(meta);
-        starScim = StarScim;
         ShapedRecipe ssRecipe = new ShapedRecipe(NamespacedKey.minecraft("starscim"), starScim);
         ssRecipe.shape(new String[]{" D ", " P ", " S "});
         ssRecipe.setIngredient('D', Material.DIAMOND);
         ssRecipe.setIngredient('S', Material.STICK);
-        ssRecipe.setIngredient('P', (RecipeChoice) ItemManagerPlasmaCore.PlasmaCore);
+        ssRecipe.setIngredient('P', (RecipeChoice) ItemManagerPlasmaCore.plasmaCore);
         Bukkit.addRecipe(ssRecipe);
     }
 }
