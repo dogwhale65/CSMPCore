@@ -16,13 +16,14 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 public class Cosmetics implements CommandExecutor {
     private String invName = "Select your cosmetic or weapon!";
+    int rows = 3;
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            Inventory inv = Bukkit.createInventory(player, 9 * 6, invName);
-            inv.setItem(11, ItemManagerStarlightScimitar.starScim);
+            Inventory inv = Bukkit.createInventory(player, 9 * rows, invName);
+            inv.setItem(10, ItemManagerStarlightScimitar.starScim);
             player.openInventory(inv);
 
         } else {

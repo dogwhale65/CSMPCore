@@ -39,7 +39,7 @@ public class ItemManagerStarlightScimitar {
         ssRecipe.shape(new String[]{" D ", " P ", " S "});
         ssRecipe.setIngredient('D', Material.DIAMOND);
         ssRecipe.setIngredient('S', Material.STICK);
-        ssRecipe.setIngredient('P', (RecipeChoice) ItemManagerPlasmaCore.plasmaCore);
+        ssRecipe.setIngredient('P', new RecipeChoice.ExactChoice(ItemManagerPlasmaCore.plasmaCore));
         Bukkit.addRecipe(ssRecipe);
     }
 }
