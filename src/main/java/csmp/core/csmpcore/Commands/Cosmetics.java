@@ -1,22 +1,21 @@
 package csmp.core.csmpcore.Commands;
 
 import csmp.core.csmpcore.ItemManagers.ItemManagerStarlightScimitar;
-import org.bukkit.BanEntry;
-import org.bukkit.BanList;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
 
-public class Cosmetics implements CommandExecutor {
-    private String invName = "Select your cosmetic or weapon!";
+
+public class Cosmetics implements CommandExecutor, Listener {
+    public String invName = "Select your cosmetic or weapon!";
     int rows = 3;
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -26,9 +25,12 @@ public class Cosmetics implements CommandExecutor {
             inv.setItem(10, ItemManagerStarlightScimitar.starScim);
             player.openInventory(inv);
 
+
         } else {
             sender.sendMessage("You must be a player to run this command!");
         }
+
         return true;
     }
+
 }
